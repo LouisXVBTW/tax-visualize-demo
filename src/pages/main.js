@@ -1,39 +1,40 @@
 import './main.css';
+import "animate.css";
+import "../data/testdata.json"
 import {Navb} from './imports';
-import "materialize-css";
 import { Fragment } from 'react';
-import { Container, Row, Col , Navbar, Nav, Button, Card, Alert} from 'react-bootstrap';
+import { Container, Row, Col , Navbar, Nav, Button, Card, Alert, blockquote} from 'react-bootstrap';
+import "chart.js";
+
 function Main() {
+  let month = (new Date().getUTCMonth() +1 ).toString();
+  let day = new Date().getUTCDate().toString();
   return(
     <Fragment>
       <Navb/>
-      <Container fluid>
+      <Container>
         <br/>
-        <Row>
+        
           <Col>
-              <Card className="text-center">
-                <Card.Header>Idk some placeholder</Card.Header>
-                <Card.Body>
-                  <Card.Title>Special title treatment</Card.Title>
-                  <Card.Text>
-                    With supporting text below as a natural lead-in to additional content.
-                  </Card.Text>
-                  <Button variant="primary">Go somewhere</Button>
-                </Card.Body>
-              </Card>
-              <Card className="text-center">
-                <Card.Header>Idk some placeholder</Card.Header>
-                <Card.Body>
-                  <Card.Title>Special title treatment</Card.Title>
-                  <Card.Text>
-                    With supporting text below as a natural lead-in to additional content.
-                  </Card.Text>
-                  <Button variant="primary">Go somewhere</Button>
-                </Card.Body>
-              </Card>
+            <div class="jumbotron verticle-center">
+              <h1 class="display-2 text-center">6th April<br/>-<br/>5th April</h1>
+              <figcaption class="display-5 text-center">
+                <cite title="Source Title">Uk tax year 2019-2020</cite>
+              </figcaption>
+            </div>
+            <div class="jumbotron verticle-center">
+              <h1 class="display-1 text-center">{day} + {month}</h1>
+            </div>
+            <div class="jumbotron verticle-center">
+              <h1 class="display-1 text-center"> hi</h1>
+              <BarChart
+                data=[{"apple"= "boopy"},]
+                title="My amazing data"
+                color="#70CAD1"
+              />
+            </div>
           </Col>
-          <Col><h2>THISISISISSI</h2></Col>
-        </Row>
+        
         
       </Container>
     </Fragment>
